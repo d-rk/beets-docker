@@ -1,11 +1,11 @@
-FROM ubuntu:24.04
+FROM ubuntu:25.04
 
 # set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
 # now run sudo apt update commands
 RUN apt-get update \
-  && apt-get install -y python3-pip python3 git mp3gain libsndfile1 vim
+  && apt-get install -y python3-pip python3 git mp3gain libsndfile1 vim ffmpeg
 
 # custom pip3 installations across all operating systems
 RUN pip3 install beets pylast pyacoustid flask requests librosa resampy --break-system-packages
