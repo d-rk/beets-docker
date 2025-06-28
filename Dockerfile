@@ -17,9 +17,6 @@ ENV BEETSDIR=/config
 
 EXPOSE 8337
 
-# fix https://github.com/beetbox/beets/issues/5289
-RUN sed -i -e 's/bpm = round(tempo)/bpm = int(tempo.round()[0])/g' /usr/local/lib/python3.12/dist-packages/beetsplug/autobpm.py
-
 ENTRYPOINT ["tail"]
 CMD ["-f","/dev/null"]
 
