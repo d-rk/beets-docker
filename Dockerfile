@@ -15,7 +15,8 @@ RUN git clone https://github.com/d-rk/beets-artistart.git
 ENV PYTHONPATH=/beets-artistart
 ENV BEETSDIR=/config
 
-RUN adduser --system --no-create-home --group nas
+RUN groupadd -g 1001 nas
+RUN useradd nas -u 999 -g 1001 -m -s /bin/bash
 
 USER nas
 WORKDIR /downloads
