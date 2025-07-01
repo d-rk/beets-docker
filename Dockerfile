@@ -16,7 +16,7 @@ ENV PYTHONPATH=/beets-artistart
 ENV BEETSDIR=/config
 
 RUN groupadd -g 1001 nas
-RUN useradd nas -u 999 -g 1001 -m -s /bin/bash
+RUN useradd nas -u 999 -g 1001 --system -m -s /bin/bash
 
 USER nas
 WORKDIR /downloads
